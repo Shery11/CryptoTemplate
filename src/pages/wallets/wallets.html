@@ -1,0 +1,83 @@
+<!--
+  Generated template for the WalletsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Wallets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-wallets pane">
+  <div class="wallets-container">
+    <div class="wallets-total">
+      <div class="title">
+        Total Balance
+      </div>
+      <div class="bitcoin">
+        {{totalBTC | number: '1.6'}} BTC
+      </div>
+      <div class="usd">
+        {{totalUSD | currency:'USD':true:'1.2'}}
+      </div>
+    </div>
+
+    <div class="segment-wrapper" padding>
+      <ion-segment color="lightdark" [(ngModel)]="segment">
+        <ion-segment-button value="balance">
+          <img *ngIf="segment === 'history'" src="assets/imgs/coinmenu/wallet2.svg">
+          <img *ngIf="segment === 'balance'" src="assets/imgs/coinmenu/wallet2white.svg"> Your Balance
+        </ion-segment-button>
+        <ion-segment-button value="history">
+          <img *ngIf="segment === 'balance'" src="assets/imgs/coinmenu/sand-clock.svg">
+          <img *ngIf="segment === 'history'" src="assets/imgs/coinmenu/sand-clock-white.svg"> History
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div class="coins-wrapper" [ngSwitch]="segment">
+      <div *ngSwitchCase="'balance'" class="coins-list-wrapper">
+        <ion-list class="coin-list">
+          <ion-item *ngFor="let coin of coins">
+            <ion-avatar item-left>
+              <img [src]="getIcon(coin)">
+            </ion-avatar>
+            <h3>{{coin.name}}</h3>
+            <ion-note item-right>
+              <img src="assets/imgs/coinmenu/qrcode-white.svg">
+              <div class="coin-price">{{coin.total | number: '1.6'}}
+                <div>{{coin.symbol}}</div>
+              </div>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'history'" class="history-list-wrapper">
+        <ion-list class="history-list">
+          <ion-item *ngFor="let transaction of transactions">
+            <ion-avatar item-left>
+              <img [src]="getIcon(transaction.coin)">
+            </ion-avatar>
+            <h3 *ngIf="transaction.type === 0">Receive</h3>
+            <h3 *ngIf="transaction.type === 1">Send</h3>
+            <ion-note item-right>
+              <div class="coin-price">{{transaction.amount | number: '1.6'}}
+                <div>{{transaction.coin.symbol}}</div>
+              </div>
+              <ion-icon *ngIf="transaction.status === 2" name="remove-circle" color="danger"></ion-icon>
+              <ion-icon *ngIf="transaction.status === 1" name="md-checkmark" color="secondary"></ion-icon>
+              <ion-icon *ngIf="transaction.status === 0" name="information-circle" color="pearl"></ion-icon>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,163 @@
+page-wallets {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .wallets-container {
+    width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .wallets-total,
+    .segment-wrapper,
+    .coins-wrapper {
+      padding-top: 20px;
+      width: 100%;
+    }
+    .wallets-total {
+      flex: 2;
+      color: color($colors, pearl);
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .title {
+        font-size: 1.68rem;
+      }
+      .bitcoin {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 2.38rem;
+        color: color($colors, primary);
+      }
+      .usd {
+        font-size: 1.68rem;
+      }
+    }
+    .segment-wrapper {
+      flex: 1;
+      .segment-md {
+        .segment-activated {
+          color: color($colors, pearl);
+          border-color: color($colors, primary);
+        }
+      }
+      ion-segment-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 21px;
+          height: 21px;
+          margin-right: 6px;
+        }
+      }
+    }
+    .coins-wrapper {
+      flex: 4;
+      .coins-list-wrapper {
+        .coin-list {
+          border: none;
+        }
+        .coin-list .item {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid color($colors, semigrey);
+          color: color($colors, pearl);
+          ion-note {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            min-width: 50vw;
+            margin-right: 0;
+            img {
+              width: 18px;
+              height: 18px;
+            }
+            div {
+              margin-left: 15px;
+              color: color($colors, primary);
+              min-width: 45vw;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              font-size: 1.38rem;
+              div {
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                min-width: 11.5vw;
+                color: color($colors, pearl);
+              }
+            }
+          }
+        }
+        .coin-list .item .item-inner {
+          border: none;
+        }
+      }
+
+      .history-list-wrapper {
+        .history-list {
+          border: none;
+        }
+        .history-list .item {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid color($colors, semigrey);
+          color: color($colors, pearl);
+          ion-note {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            min-width: 50vw;
+            margin-right: 0;
+            img {
+              width: 18px;
+              height: 18px;
+            }
+            div {
+              margin-left: 15px;
+              color: color($colors, primary);
+              min-width: 35vw;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              font-size: 1.38rem;
+              div {
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                min-width: 11.5vw;
+                color: color($colors, pearl);
+              }
+            }
+            ion-icon {
+              margin-left: 8px;
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+        .history-list .item .item-inner {
+          border: none;
+        }
+      }
+    }
+  }
+}

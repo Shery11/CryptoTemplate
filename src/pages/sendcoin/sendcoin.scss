@@ -1,0 +1,159 @@
+page-sendcoin {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .wallets-container {
+    width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .wallets-total,
+    .sendcoin-wrapper {
+      padding-top: 20px;
+      width: 100%;
+    }
+    .wallets-total {
+      flex: 1;
+      color: color($colors, pearl);
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .title {
+        font-size: 1.68rem;
+      }
+      .bitcoin {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 2.38rem;
+        color: color($colors, primary);
+      }
+      .usd {
+        font-size: 1.68rem;
+      }
+    }
+    .sendcoin-wrapper {
+      flex: 3;
+      color: color($colors, pearl);
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .sendcoin-row {
+        width: 94%;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        .sendcoin-column {
+          flex: 1;
+          button {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 44px;
+            border: 1px solid color($colors, semigrey);
+            border-radius: 5px;
+            div {
+              flex: 1;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            }
+            div.start3 {
+              flex: 3;
+              justify-content: flex-start;
+            }
+            div.start4 {
+              flex: 10;
+              justify-content: flex-start;
+              max-width: 66vw;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            div.start {
+              justify-content: flex-start;
+            }
+            div.end {
+              justify-content: flex-end;
+            }
+            img {
+              width: 21px;
+              height: 21px;
+            }
+            ion-icon {
+              margin-left: 10px;
+            }
+          }
+          button.no-border {
+            border: none;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            img {
+              width: 44px;
+              height: 44px;
+            }
+          }
+          span {
+            color: color($colors, primary);
+          }
+          .input-wrapper {}
+          .input-wrapper .item {
+            margin-top: 5px;
+            background: transparent;
+            border: 1px solid color($colors, semigrey);
+            border-radius: 5px;
+            input {
+              color: color($colors, pearl);
+              text-align: right;
+            }
+          }
+          .input-wrapper .item .item-inner {
+            border: none;
+          }
+        }
+        .col5 {
+          flex: 5;
+        }
+      }
+      .sendcoin-row.title {
+        margin-bottom: 0;
+      }
+    }
+  }
+  ion-footer {
+    .action-row {
+      width: 94%;
+      margin-left: 3%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      .action-column {
+        flex: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+        .action-round {
+          height: 36px;
+          border: 1px solid color($colors, lightdark);
+          border-radius: 5px;
+          font-size: 1.38rem;
+        }
+      }
+    }
+  }
+}

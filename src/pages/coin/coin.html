@@ -1,0 +1,128 @@
+<!--
+  Generated template for the CoinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{coin.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <img [src]="getIcon(coin)" class="coin-logo">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="page-coin pane">
+  <ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
+    [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+    [autoScale]="autoScale" (select)="onSelect($event)">
+  </ngx-charts-area-chart>
+
+  <div class="coin-container">
+    <div class="coin-row">
+      <div class="coin-column">
+        <div class="column-title">
+          7d
+        </div>
+        <div class="column-value">
+          {{coin.percent_change_7d | number: '1.2'}}%
+        </div>
+      </div>
+      <div class="coin-column">
+        <div class="column-title">
+          24h
+        </div>
+        <div class="column-value">
+          {{coin.percent_change_24h | number: '1.2'}}%
+        </div>
+      </div>
+      <div class="coin-column">
+        <div class="column-title">
+          1h
+        </div>
+        <div class="column-value">
+          {{coin.percent_change_1h | number: '1.2'}}%
+        </div>
+      </div>
+    </div>
+    <div class="coin-row">
+      <div class="coin-title">
+        Current Price (USD)
+      </div>
+      <div class="coin-value">
+        {{coin.price_usd | currency:'USD':'1.2'}}
+      </div>
+    </div>
+    <div class="coin-row">
+      <div class="coin-title">
+        Price (BTC)
+      </div>
+      <div class="coin-value">
+        {{coin.price_btc | number:'1.6'}}
+      </div>
+    </div>
+    <div class="coin-row">
+      <div class="coin-title">
+        Market Cap
+      </div>
+      <div class="coin-value">
+        {{coin.market_cap_usd | currency:'USD':'1.2'}}
+      </div>
+    </div>
+    <div class="coin-row">
+      <div class="coin-title">
+        Volume 24h
+      </div>
+      <div class="coin-value">
+        {{coin['24h_volume_usd'] | currency:'USD':'1.2'}}
+      </div>
+    </div>
+    <div class="coin-row">
+      <div class="coin-title">
+        Circulating Supply
+      </div>
+      <div class="coin-value">
+        {{coin.available_supply | number:'1.1-2'}}
+      </div>
+    </div>
+    <div *ngIf="coin.max_supply" class="coin-row">
+      <div class="coin-title">
+        Max Supply
+      </div>
+      <div class="coin-value">
+        {{coin.max_supply | number:'1.1-2'}}
+      </div>
+    </div>
+    <div *ngIf="coin.total_supply" class="coin-row">
+      <div class="coin-title">
+        Total Supply
+      </div>
+      <div class="coin-value">
+        {{coin.total_supply | number:'1.1-2'}}
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+<ion-footer *ngIf="inWallet()">
+  <div class="action-row">
+    <div class="action-column">
+      <button ion-button full color="lightdark" class="action-round" (click)="exchange()">
+        Exchange
+      </button>
+    </div>
+    <div class="action-column">
+      <button ion-button full color="lightdark" class="action-round" (click)="send()">
+        Send
+      </button>
+    </div>
+  </div>
+</ion-footer>

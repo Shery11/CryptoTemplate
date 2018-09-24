@@ -1,0 +1,74 @@
+page-congratulation {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .congratulation-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    color: color($colors, pearl);
+    .logo-wrapper {
+      width: 100vw;
+      flex: 1;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      #logo {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        width: 36vw;
+        height: 36vw;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        img {
+          width: 88%;
+        }
+      }
+      #logo.rotate {
+        animation-name: spin;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 2000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      }
+    }
+    .text-wrapper {
+      flex: 1;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .title {
+        font-size: 1.88rem;
+        font-weight: 600;
+      }
+      .description {
+        margin-top: 3px;
+        font-size: 1.38rem;
+        color: color($colors, semigrey);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

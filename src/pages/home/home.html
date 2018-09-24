@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-home pane">
+  <ion-list class="coin-list">
+    <button detail-none ion-item *ngFor="let coin of coins" (click)="detail(coin)">
+      <ion-avatar item-left>
+        <img [src]="getIcon(coin)">
+      </ion-avatar>
+      <h3>{{coin.name}}</h3>
+      <p>{{coin.market_cap_usd | currency:'USD':'1.2'}}</p>
+      <ion-note item-right>
+        <ion-icon *ngIf="coin.percent_change_24h >= 0" color="secondary" name="md-arrow-dropup"></ion-icon>
+        <ion-icon *ngIf="coin.percent_change_24h < 0" color="danger" name="md-arrow-dropdown"></ion-icon>
+        <div class="price-wrapper">
+          <div>Price</div>
+          <div class="price">{{coin.price_usd | currency:'USD':'1.2'}}</div>
+        </div>
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

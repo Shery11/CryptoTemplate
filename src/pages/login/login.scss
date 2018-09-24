@@ -1,0 +1,101 @@
+page-login {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .login-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    .logo-wrapper {
+      width: 100vw;
+      flex: 2;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      #logo {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        width: 36vw;
+        height: 36vw;
+        justify-content: center;
+        align-items: center;
+        background-color: color($colors, pearl);
+        border-radius: 50%;
+        img {
+          width: 68%;
+        }
+      }
+      #logo.rotate {
+        animation-name: spin;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 2000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      }
+    }
+    .input-wrapper {
+      width: 100vw;
+      flex: 1;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.38rem;
+        font-weight: 500;
+        color: color($colors, pearl);
+        margin-bottom: 10px;
+      }
+    }
+    .input-wrapper .item {
+      padding-left: 0;
+      width: 68%;
+      border: none;
+      background: transparent;
+      input {
+        color: color($colors, pearl);
+        text-align: center;
+      }
+    }
+    .input-wrapper .item .item-inner {
+      border: none;
+      border: 1px solid color($colors, lightdark);
+    }
+    .action-wrapper {
+      flex: 1;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      button {
+        box-shadow: none;
+        min-width: 50vw;
+        
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,41 @@
+page-settings {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .settings-container {
+    width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .settings-wrapper {
+      width: 96%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 0.5vh;
+    }
+    .settings-wrapper .item {
+      border: none;
+      background: color($colors, semigrey);
+      color: color($colors, pearl);
+      min-height: 10vh;
+      margin-top: 0.5vh;
+      margin-bottom: 0.5vh;
+      border-radius: 8px;
+      h3 {
+        font-size: 1.68rem;
+      }
+      p {
+        color: color($colors, pearl);
+      }
+    }
+    .settings-wrapper .item .item-inner {
+      border: none;
+    }
+  }
+}

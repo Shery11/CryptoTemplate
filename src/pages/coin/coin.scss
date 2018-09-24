@@ -1,0 +1,94 @@
+page-coin {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .coin-logo {
+    width: 26px;
+    height: 26px;
+  }
+  .ngx-charts {
+    .area-chart {
+      text {
+        fill: color($colors, pearl);
+      }
+    }
+  }
+  .coin-container {
+    width: 100vw;
+    height: 100%;
+    color: color($colors, pearl);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .coin-row {
+      width: 90%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 34px;
+      border-bottom: 1px solid color($colors, semigrey);
+      .coin-title, .coin-value, .coin-column {
+        flex: 1;
+        font-size: 1.38rem;
+      }
+      .coin-column {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .column-title {
+          font-weight: 500;  
+        }
+        margin-bottom: 20px;
+        .action-round {
+
+        }
+      }
+      .coin-title {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 500;
+      }
+      .coin-value {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+  }
+
+  ion-footer {
+    .action-row {
+      width: 94%;
+      margin-left: 3%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      .action-column {
+        flex: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+        .action-round {
+          height: 36px;
+          border-radius: 5px;
+          font-size: 1.38rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+page-messages {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .messages-list {
+    border: none !important;
+    padding-bottom: 10vh;
+    ion-item-sliding {
+      background: transparent !important;
+    }
+  }
+  .messages-list .item {
+    border: none !important;
+    min-height: 8vh;
+    background: transparent;
+    color: color($colors, pearl);
+    ion-avatar {
+      img {
+        border: 1px solid color($colors, lightdark);
+      }
+    }
+    h2 {
+      font-size: 1.36rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    p.time {
+      height: 100%;
+      vertical-align: top;
+      padding-top: 8px;
+      font-size: 1.2rem;
+    }
+    border-bottom: 1px solid color($colors, lightdark) !important;
+    .online-circle {
+      position: relative;
+      z-index: 100;
+      left: 24px;
+      top: -5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: color($colors, primary);
+    }
+  }
+  .messages-list .item .item-inner {
+    border: none;
+  }
+  .messages-list .item .item-block {
+    border: none;
+  }
+  ion-item-options {
+    border: none !important;
+    border-bottom: 1px solid color($colors, light) !important;
+  }
+  .more-button {
+    ion-icon {
+      font-size: 2rem;
+    }
+    border: none !important;
+    font-size: 1.1rem;
+    width: 56px;
+  }
+  .delete-button {
+    ion-icon {
+      font-size: 2rem;
+    }
+    border: none;
+    font-size: 1.1rem;
+    width: 56px;
+    background: color($colors, primary) !important;
+    color: color($colors, pearl);
+    background-image: -webkit-linear-gradient(top, color($colors, primary), color($colors, secondary)) !important;
+    background-image: -moz-linear-gradient(top, color($colors, primary), color($colors, secondary)) !important;
+    background-image: -ms-linear-gradient(top, color($colors, primary), color($colors, secondary)) !important;
+    background-image: -o-linear-gradient(top, color($colors, primary), color($colors, secondary)) !important;
+    background-image: linear-gradient(to bottom, color($colors, primary), color($colors, secondary)) !important;
+  }
+  .delete-button:hover {
+    background: color($colors, secondary) !important;
+    background-image: -webkit-linear-gradient(top, color($colors, secondary), color($colors, primary)) !important;
+    background-image: -moz-linear-gradient(top, color($colors, secondary), color($colors, primary)) !important;
+    background-image: -ms-linear-gradient(top, color($colors, secondary), color($colors, primary)) !important;
+    background-image: -o-linear-gradient(top, color($colors, secondary), color($colors, primary)) !important;
+    background-image: linear-gradient(to bottom, color($colors, secondary), color($colors, primary)) !important;
+  }
+}

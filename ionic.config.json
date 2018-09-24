@@ -1,0 +1,8 @@
+{
+  "name": "nicebitcoin",
+  "app_id": "d94c7c68",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

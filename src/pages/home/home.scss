@@ -1,0 +1,55 @@
+page-home {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .coin-list {
+    border: none;
+    background-color: transparent;
+  }
+  .coin-list .item {
+    border: none;
+    border-bottom: 1px solid color($colors, semigrey);
+    color: color($colors, pearl);
+    background-color: transparent;
+    p {
+      font-size: 1.38rem;
+    }
+    ion-note {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 1.36rem;
+      width: 25vw;
+      ion-icon {
+          flex: 1;
+      }
+      .price-wrapper {
+        flex: 5;
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        div {
+          color: color($colors, pearl);
+        }
+        div.price {
+          font-size: 1.38rem;
+        }
+      }
+    }
+  }
+  .coin-list .item .item-inner {
+    border: none;
+  }
+  .coin-list .item:first-child {
+    border: none;
+    border-bottom: 1px solid color($colors, semigrey);
+  }
+  .coin-list .item:last-child {
+    border: none;
+    border-bottom: 1px solid color($colors, semigrey);
+  }
+}

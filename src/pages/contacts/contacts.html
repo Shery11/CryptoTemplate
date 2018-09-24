@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ContactsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Address Book</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-contacts pane">
+  <ion-list class="contact-list">
+    <ion-item-sliding *ngFor="let contact of contacts">
+      <ion-item>
+        <ion-avatar item-left>
+          <img [src]="contact.avatar">
+          <div class="online-circle"></div>
+        </ion-avatar>
+        <h2>{{contact.first_name}} {{contact.last_name}}</h2>
+        <p>{{contact.email}}</p>
+        <div class="contact-info" item-right>
+          <button ion-button small clear icon-only color="lightdark" (click)="conversation(contact)">
+            <ion-icon name="md-text"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button class="delete-button" ion-button (click)="delete(contact)">
+          <ion-icon name="ios-trash-outline"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

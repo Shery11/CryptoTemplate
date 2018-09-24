@@ -1,0 +1,278 @@
+page-exchange {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .exchange-container {
+    width: 100vw;
+    height: calc(100vh - 72px);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .wallets-total {
+      flex: 1;
+      width: 100%;
+      color: color($colors, pearl);
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      .title {
+        font-size: 1.68rem;
+      }
+      .bitcoin {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 2.38rem;
+        color: color($colors, primary);
+      }
+      .usd {
+        font-size: 1.68rem;
+      }
+    }
+    .slides-wrapper {
+      flex: 3;
+      width: 92%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      // background-color: #fff;
+      .swiper-container {
+        height: auto;
+      }
+      .exchange-wrapper {
+        flex: 1;
+        width: 92vw;
+        border: 1px solid color($colors, semigrey);
+        border-radius: 10px;
+        padding: 20px 10px;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .exchange-row {
+          width: 100%;
+          display: flex;
+          display: -webkit-flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .title,
+          .min, .max {
+            font-size: 1.26rem;
+            color: color($colors, semigrey);
+            padding-left: 1vw;
+          }
+          .price {
+            font-size: 1.38rem;
+            color: color($colors, pearl);
+            padding-left: 1vw;
+            span {
+              font-size: 1.68rem;
+              color: color($colors, primary);
+            }
+          }
+          .min,
+          .price {
+            padding-bottom: 20px;
+          }
+          .input-wrapper {
+            padding-left: 1vw;
+            padding-right: 1vw;
+            flex: 1;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            button {
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: flex-start;
+              height: 44px;
+              div {
+                flex: 1;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+              }
+              div.start {
+                justify-content: flex-start;
+              }
+              div.end {
+                justify-content: flex-end;
+              }
+              img {
+                width: 21px;
+                height: 21px;
+              }
+              ion-icon {
+                margin-left: 10px;
+              }
+            }
+            button.select-button {
+              border: 1px solid color($colors, semigrey);
+              border-radius: 5px;
+            }
+          }
+          .input-wrapper .item {
+            border: none;
+            border: 1px solid color($colors, semigrey);
+            border-radius: 5px;
+            height: 40px;
+            background-color: lightslategray;
+            input {
+              color: color($colors, pearl);
+              text-align: right;
+            }
+          }
+          .input-wrapper .item .item-inner {
+            border: none;
+          }
+          .title-center {
+            width: 100%;
+            color: color($colors, pearl);
+            padding-bottom: 10px;
+          }
+          .column {
+            flex: 1;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 10px;
+            div.start {
+              flex: 1;
+            }
+            div {
+              flex: 3;
+              color: color($colors, pearl);
+            }
+            img {
+              width: 21px;
+              height: 21px;
+            }
+            ion-icon {
+              color: color($colors, pearl);
+              font-size: 2.68rem;
+            }
+          }
+          .column.left,
+          .column.right {
+            flex: 2;
+            .sub-title {
+              padding-top: 5px;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 1.68rem;
+            }
+            .sub-total {
+              padding-top: 5px;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              font-size: 1.68rem;
+            }
+            .sub-total-price {
+              padding-top: 5px;
+              display: flex;
+              display: -webkit-flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              font-size: 1.68rem;
+              color: color($colors, primary);
+            }
+          }
+          .column.left {
+            justify-content: flex-start;
+          }
+          .column.right {
+            justify-content: flex-end;
+          }
+        }
+        .exchange-row.dark {
+          background-color: color($colors, semigrey);
+          border-radius: 5px;
+          padding-left: 5px;
+          padding-right: 5px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+    .action-row {
+      flex: 1;
+      width: 92%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      button {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 44px;
+        div {
+          flex: 1;
+          display: flex;
+          display: -webkit-flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        div.start {
+          justify-content: flex-start;
+        }
+        div.end {
+          justify-content: flex-end;
+        }
+        img {
+          width: 21px;
+          height: 21px;
+        }
+        ion-icon {
+          margin-left: 10px;
+        }
+      }
+      button.action-button {
+        border: 1px solid color($colors, semigrey);
+        height: 36px;
+        width: 100%;
+      }
+      .confirm-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        button {
+          height: 36px;
+          border: 1px solid color($colors, semigrey);
+        }
+      }
+    }
+  }
+}

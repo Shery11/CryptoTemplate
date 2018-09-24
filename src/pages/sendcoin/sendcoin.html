@@ -1,0 +1,112 @@
+<!--
+  Generated template for the SendcoinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Send</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-sendcoin pane">
+  <div class="wallets-container">
+    <div class="wallets-total">
+      <div class="title">
+        Total Balance
+      </div>
+      <div class="bitcoin">
+        {{totalBTC | number: '1.6'}} BTC
+      </div>
+      <div class="usd">
+        {{totalUSD | currency:'USD':'1.2'}}
+      </div>
+    </div>
+
+    <div class="sendcoin-wrapper">
+      <div class="sendcoin-row title">
+        <div class="sendcoin-column">
+          Send to
+        </div>
+      </div>
+      <div class="sendcoin-row">
+        <div class="sendcoin-column col5">
+          <div class="input-wrapper">
+            <button color="semidark" ion-button full>
+              <div class="start4">{{qrCode}}</div>
+              <div class="end">
+                <ion-icon name="md-arrow-dropdown"></ion-icon>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="sendcoin-column">
+          <button color="semidark" ion-button full class="no-border" (click)="scanQRCode()">
+            <img src="assets/imgs/coinmenu/qrcode-white.svg">
+          </button>
+        </div>
+      </div>
+      <div class="sendcoin-row title">
+        <div class="sendcoin-column">
+          From
+        </div>
+      </div>
+      <div class="sendcoin-row">
+        <div class="sendcoin-column">
+          <div class="input-wrapper">
+            <button color="semidark" ion-button full (click)="chooseCoin()">
+              <div class="start">
+                <img [src]="getIcon(exchangeCoin)">
+              </div>
+              <div class="start3">{{exchangeCoin.name}}</div>
+              <div class="end">
+                <ion-icon name="md-arrow-dropdown"></ion-icon>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="sendcoin-row title">
+        <div class="sendcoin-column">
+          You have:
+          <span>{{exchangeCoin.total}}&nbsp;{{exchangeCoin.symbol}}</span>
+        </div>
+      </div>
+      <div class="sendcoin-row">
+      </div>
+      <div class="sendcoin-row title">
+        <div class="sendcoin-column">
+          Amount
+        </div>
+      </div>
+      <div class="sendcoin-row">
+        <div class="sendcoin-column">
+          <div class="input-wrapper">
+            <ion-item>
+              <ion-input type="number" [(ngModel)]="sendAmount"></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="action-row">
+    <div class="action-column">
+      <button ion-button full color="semidark" class="action-round" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+    <div class="action-column">
+      <button ion-button full color="lightdark" class="action-round" [disabled]="sendAmount < 0.001" (click)="send()">
+        Send
+      </button>
+    </div>
+  </div>
+</ion-footer>

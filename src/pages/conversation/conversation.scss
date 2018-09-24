@@ -1,0 +1,110 @@
+page-conversation {
+  .pane {
+    min-height: 100vh;
+    background-color: color($colors, semidark);
+  }
+  .messages-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    .message-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100vw;
+      img.avatar {
+        margin-top: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; // position: absolute;
+      }
+      img.avatar.left {
+        margin-left: 10px;
+      }
+      img.avatar.right {
+        margin-right: 10px;
+      }
+      img.avatar.right.none {
+        visibility: hidden;
+      }
+      .chat-bubble {
+        border-radius: 5px;
+        padding: 10px 18px;
+        margin: 10px;
+        width: 70vw;
+        background: color($colors, primary) !important;
+        color: color($colors, dark);
+        background-image: -webkit-linear-gradient(top, color($colors, primary), color($colors, light)) !important;
+        background-image: -moz-linear-gradient(top, color($colors, primary), color($colors, light)) !important;
+        background-image: -ms-linear-gradient(top, color($colors, primary), color($colors, light)) !important;
+        background-image: -o-linear-gradient(top, color($colors, primary), color($colors, light)) !important;
+        background-image: linear-gradient(to bottom, color($colors, primary), color($colors, light)) !important;
+      }
+      .time {
+        font-size: 1rem;
+        margin-top: -8px;
+        text-align: center;
+        width: 100vw;
+      }
+      .chat-bubble.image {
+        width: 70vw;
+        min-height: 26vh;
+        padding: 0 0 0 0;
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+    .message-wrapper.right {
+      flex-direction: row-reverse;
+      color: color($colors, pearl);
+      .chat-bubble {
+        border: 1px solid color($colors, semidark);
+        background-color: color($colors, semidark);
+        background-image: -webkit-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+        background-image: -moz-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+        background-image: -ms-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+        background-image: -o-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+        background-image: linear-gradient(to bottom, color($colors, semidark), color($colors, lightdark)) !important;
+        color: color($colors, pearl);
+      }
+    }
+  }
+  .msg {
+    border-top: 1px solid color($colors, lightdark);
+    .action-button {
+      margin: 10px 0 0 8px;
+      padding: 0 0 0 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: color($colors, primary) !important;
+      color: color($colors, pearl);
+      background-image: -webkit-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -moz-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -ms-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -o-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: linear-gradient(to bottom, color($colors, semidark), color($colors, lightdark)) !important;
+    }
+    .action-button:hover {
+      background: color($colors, secondary) !important;
+      background-image: -webkit-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -moz-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -ms-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: -o-linear-gradient(top, color($colors, semidark), color($colors, lightdark)) !important;
+      background-image: linear-gradient(to bottom, color($colors, semidark), color($colors, lightdark)) !important;
+    }
+    ion-textarea {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  }
+  .msg .item {
+    border: none;
+  }
+  .msg .item .item-inner {
+    border: none;
+  }
+}
